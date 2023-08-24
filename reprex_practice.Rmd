@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(here)
 library(janitor)
+library(reprex)
 ```
 
 Your job is to identify an error, then make a reproducible example that would help future you or someone else understand how to write the code correctly. In other words, your reprex code will *work* and offer a solution to the error thrown in each of the following examples. 
@@ -33,16 +34,7 @@ Identify what is causing the problem in the code below (there's only one thing).
 
 ```{r}
 # Example 1: 
-mack_creek_lengths <- mack_creek_vertebrates %>% 
-  clean_names() %>% 
-  select(year:sampledate) %>% 
-  filter(section == "CC") %>% 
-  mutate(across(where(is.character, tolower))) %>% 
-  drop_na(species) %>% 
-  group_by(species) %>% 
-  summarize(mean_length_cm = mean(length1, na.rm = TRUE),
-            sd_length_cm = sd(length1, na.rm = TRUE)) %>% 
-  ungroup()
+no
 ```
 
 ### reprex 2
@@ -55,7 +47,7 @@ mack_creek_vertebrates %>%
   clean_names() %>% 
   filter(species == "ONCL") %>% 
   ggplot(aes(x = length1, y = weight)) +
-         geom_point(aes(shape = 12), color = "purple") +
+         geom_point(shape = 12, color = "purple") +
          theme_minimal() +
          labs(x = "Cutthroat trout length (cm)",
               y = "Weight (g)")
