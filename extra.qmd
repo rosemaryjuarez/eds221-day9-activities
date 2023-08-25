@@ -1,0 +1,40 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+write a loop where starting with the vector: c(2,4,6,8,10,12), you add a value and the one that immediately precedes it, returnign a new vector with those sums
+
+```
+
+```{r}
+vector = c(2,4,6,8,10,12)
+my_vec <- vector(mode = 'numeric', length = (length(vector) - 1))
+```
+
+```{r}
+for (i in 2:(length(vector))) {
+  my_vec[i-1] = print(vector[i] + (vector[i]-1))
+  
+}
+```
+
+```{r}
+populate_vec
+```
+
+```{r}
+ggplot(data = trees, aes(x = Height, y = Volume)) + 
+  geom_point() +
+  theme(title = element_text(size = 18, color = 'purple'),
+        plot.background = element_rect(fill = 'black'),
+        panel.background = element_text(color = 'green')
+        axis.title.x = element_text(color = 'blue'),
+        panel.grid = element_line(color = 'pink'))
+```
